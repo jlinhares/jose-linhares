@@ -1,0 +1,17 @@
+<!--<form (ngSubmit)="onSubmit()" #form="ngForm">-->
+
+<form [formGroup]="paymentForm"  (ngSubmit)="onSubmit()">    
+    <div class="flex-container">
+        <div style="display: flex; flex-direction: column;">
+            <div><label>NAME</label></div>
+            <div><input class="form-control" style="width: 100px;" formControlName="name" required maxlength="70"></div>
+        </div>
+        <div style="display: flex; flex-direction: column; padding-left:30px;">
+            <div><label>AMOUNT</label></div>
+            <div><input type="number" class="form-control" style="width: 100px;" formControlName="amount" value="0" min="0" required></div>
+        </div>
+        <div style="padding-left:30px; vertical-align: bottom; margin-top: auto;">
+            <button class="btn btn-primary" type="submit" [disabled]="!(paymentForm.valid && acceptPayment)">+ ADD</button>
+        </div>
+    </div>
+</form>

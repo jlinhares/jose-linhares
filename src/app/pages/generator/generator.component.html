@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <app-header (generate)="onGenerate()" (charChange)="onCharChange($event)" [playing]="isLive"></app-header>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <app-grid></app-grid>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <app-livecode></app-livecode>
+        </div>
+    </div>
+</div>

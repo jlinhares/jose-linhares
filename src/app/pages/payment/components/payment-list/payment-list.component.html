@@ -1,0 +1,29 @@
+<h4>PAYMENT LIST</h4>
+<div class="list-group"  >
+    <div class="list-group-item" style="background-color: #eee;">
+        <div class="flex-container">
+            <div class="list-group-item-element">NAME</div>
+            <div class="list-group-item-element">AMOUNT</div>
+            <div class="list-group-item-element">CODE</div>
+            <div class="list-group-item-element">GRID</div>
+        </div>
+    </div>
+    <div class="list-group" [@aniPayment]="payments.length">
+        <div class="list-group-item" *ngFor="let payment of payments">
+            <div class="flex-container">
+                <div class="list-group-item-element" style="flex-grow: 9;">
+                    {{payment.name}}
+                </div>
+                <div class="list-group-item-element">
+                    {{payment.amount}}  
+                </div>
+                <div class="list-group-item-element">
+                    {{payment.code}} 
+                </div>
+                <div class="list-group-item-element">
+                    {{payment.grid.length}} 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

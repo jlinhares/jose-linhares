@@ -1,0 +1,8 @@
+<div class="dbox">
+    <div class="livebox">
+        <span [ngClass]="{'glyphicon': true, 'glyphicon-dot': true, 'dot-live': isLive}" class="glyphicon glyphicon-dot" aria-hidden="true"></span>LIVE
+    </div>
+</div>
+<div class="dbox">
+    <div class="codebox" [ngStyle]="{display: (isLive) ? 'inline' : 'none'}">YOUR CODE: {{code}} </div>
+</div>

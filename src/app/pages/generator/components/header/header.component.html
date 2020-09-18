@@ -1,0 +1,16 @@
+
+    <div class="flex-container">
+    
+        <div style="flex-grow: 9;">
+            <div style="display: flex; flex-direction: column;">
+                <div><label>Character</label></div>
+                <div><input class="form-control" style="width: 100px;" maxlength="1" (keyup)="lettersOnly($event)" type="text" [disabled]="disabledInput" [(ngModel)]="selectedChar" ></div>
+            </div>
+        </div>
+        <div style="display:flex; align-items:center;">
+            <button type="button" class="btn btn-primary" title="GENERATE 2D GRID" (click)="onclick()" [disabled]='playing'>
+                GENERATE 2D GRID
+            </button>
+        </div>
+   
+    </div>

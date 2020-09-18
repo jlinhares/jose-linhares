@@ -1,0 +1,7 @@
+<div *ngIf="values; else elseBlock" class="grid-container">
+    <div class="grid-cell" *ngFor="let value of values">{{value}}</div>
+</div>
+
+<ng-template #elseBlock>
+    <div class="grid-warning">Please, start generating grid</div>
+</ng-template>
