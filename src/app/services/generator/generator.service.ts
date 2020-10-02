@@ -50,22 +50,30 @@ export class GeneratorService {
   }
 
   private generate(){
-    const a  = new Array(100).fill('');
-    let counter = 0;
-    this.currentGrid = a.map((v, i) => {
-      if (this.currentChar && this.currentChar !== '' && this.currentChar.length === 1) {
-        if (20 - counter === 100 - i ) {
-          counter++;
-          return this.currentChar;
-        } else {
-          if (counter < 20 && Math.round(Math.random() - 0.25)) {  // 0.25 evita concentração excessiva no ínicio
-            counter++;
-            return this.currentChar;
-          }
-        }
-      }
-      return String.fromCharCode(Math.round(Math.random() * (122 - 97) + 97));
-    });
+    // const a  = new Array(100).fill('');
+    // let counter = 0;
+    // this.currentGrid = a.map((v, i) => {
+    //  if (this.currentChar && this.currentChar !== '' && this.currentChar.length === 1) {
+    //    if (20 - counter === 100 - i ) {
+    //      counter++;
+    //      return this.currentChar;
+    //    } else {
+    //      if (counter < 20 && Math.round(Math.random() - 0.25)) {  // 0.25 evita concentração excessiva no ínicio
+    //        counter++;
+    //        return this.currentChar;
+    //      }
+    //    }
+    //  }
+    //  return String.fromCharCode(Math.round(Math.random() * (122 - 97) + 97));
+    //});
+    
+    this.currentGrid = [...Array(100)].map(
+      () => String.fromCharCode(Math.round(Math.random() * (122 - 97) + 97))
+    );
+    if (this.currentChar) {
+      this.currentGrid = this.currentGrid.fill(this.currentChar, 0, 20);
+    }
+    this.currentGrid.sort(() => Math.random() - 0.5);
     this.currentCode = this.getCode();
   }
 
