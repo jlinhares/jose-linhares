@@ -70,7 +70,7 @@ export class GeneratorService {
     this.currentGrid = [...Array(100)].map(
       () => String.fromCharCode(Math.round(Math.random() * (122 - 97) + 97))
     );
-    if (this.currentChar) {
+    if (this.currentChar && this.currentChar !== '' && this.currentChar.length === 1) {
       this.currentGrid = this.currentGrid.fill(this.currentChar, 0, 20);
     }
     this.currentGrid.sort(() => Math.random() - 0.5);
